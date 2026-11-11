@@ -1,0 +1,29 @@
+{
+  "slug": "LongFormMixxa",
+  "name": "Long Form + Mixxa",
+  "version": "2.0.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "Haer",
+  "author": "Haer",
+  "authorEmail": "",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "https://github.com/hardyfinn/LongForm-Mixxa",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "LongForm",
+      "name": "Long Form",
+      "description": "Arrangement conductor: draw a song form of up to 8 sections and 8 lanes; STEER picks the energy you want next and DRIFT lets the form rewrite itself",
+      "tags": ["Sequencer", "Clock modulator", "Logic"]
+    },
+    {
+      "slug": "Mixxa",
+      "name": "Mixxa",
+      "description": "8-channel performance mixer: mutes, solos, scenes and random mutes land on the next beat; kick ducking and a one-knob glue compressor",
+      "tags": ["Mixer", "Utility", "Compressor", "Polyphonic"]
+    }
+  ]
+}

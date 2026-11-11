@@ -1,0 +1,7 @@
+build/
+dist/
+*.vcvplugin
+test/engine_test
+plugin.dylib
+plugin.so
+plugin.dll
