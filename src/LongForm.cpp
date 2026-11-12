@@ -97,7 +97,7 @@ struct LongForm : Module {
 		configOutput(BAR_OUTPUT, "Bar trigger");
 		configOutput(PHRASE_OUTPUT, "Phrase trigger");
 		configOutput(END_OUTPUT, "End trigger: the form finished");
-		configOutput(LINK_OUTPUT, "LINK to Mixxa (poly: lanes, beat, change, energy, reset, 16ths)");
+		configOutput(LINK_OUTPUT, "LINK to Mixxa and The Changes (poly: lanes, beat, change, energy, reset, 16ths, section)");
 		lightDiv.setDivision(32);
 		e.seed = random::u64();
 		e.reset();
@@ -197,15 +197,17 @@ struct LongForm : Module {
 		outputs[BAR_OUTPUT].setVoltage(bar ? 10.f : 0.f);
 		outputs[PHRASE_OUTPUT].setVoltage(phrase ? 10.f : 0.f);
 		outputs[END_OUTPUT].setVoltage(end ? 10.f : 0.f);
-		// LINK: 1-8 lanes, 9 beat, 10 change, 11 energy, 12 reset, 13 sixteenths
+		// LINK: 1-8 lanes, 9 beat, 10 change, 11 energy, 12 reset, 13 sixteenths,
+		// 14 section number (0 V = row 1 ... 7 V = row 8, for The Changes)
 		Output& link = outputs[LINK_OUTPUT];
-		link.setChannels(13);
+		link.setChannels(14);
 		for (int l = 0; l < LANES; l++) link.setVoltage(e.laneOn(l) ? 10.f : 0.f, l);
 		link.setVoltage(beat ? 10.f : 0.f, 8);
 		link.setVoltage(change ? 10.f : 0.f, 9);
 		link.setVoltage(energyOut, 10);
 		link.setVoltage(rst ? 10.f : 0.f, 11);
 		link.setVoltage(six ? 10.f : 0.f, 12);
+		link.setVoltage((float) std::max(0, e.cur), 13);
 
 		if (lightDiv.process()) {
 			float ldt = dt * lightDiv.getDivision();

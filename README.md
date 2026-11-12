@@ -12,7 +12,7 @@ One poly cable (**LINK**) joins them.
 
 ## Install (Apple Silicon Mac)
 
-1. Download `LongFormMixxa-2.0.0-mac-arm64.vcvplugin` from the [latest release](https://github.com/hardyfinn/LongForm-Mixxa/releases/tag/latest).
+1. Download `LongFormMixxa-2.1.0-mac-arm64.vcvplugin` from the [latest release](https://github.com/hardyfinn/LongForm-Mixxa/releases/tag/latest).
 2. In Rack, choose **Help → Open user folder**, then close Rack.
 3. Put the file, unopened, into the `plugins-mac-arm64` folder.
 4. Start Rack and search for **Long Form** or **Mixxa**.
@@ -79,6 +79,7 @@ MUTE colours: blinking orange = armed, red = muted, amber = you have overridden 
 | 11 | Energy (0 to 10 V, with glide) |
 | 12 | Reset trigger |
 | 13 | 16th-note trigger (for Mixxa's "next 16th" timing) |
+| 14 | Section number: 0 V = row 1 to 7 V = row 8 (for The Changes, which keeps a chord loop per section) |
 
 ## Build
 
