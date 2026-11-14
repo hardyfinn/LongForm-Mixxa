@@ -233,3 +233,10 @@ if __name__ == "__main__":
     b = mixxa()
     write_layout([("lfl", a), ("mxl", b)])
     print("wrote res/LongForm.svg, res/Mixxa.svg, src/Layout.hpp")
+
+# --- Haer maker logo (res/haer_logo.py), placed clear of the jacks and rail artwork
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import haer_logo
+haer_logo.add_to_file(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "LongForm.svg"), x=96.14, y=126.0, cap=3.0, bg='#ECE5D8')
+haer_logo.add_to_file(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "Mixxa.svg"), x=94.64, y=126.0, cap=3.0, bg='#ECE5D8')
