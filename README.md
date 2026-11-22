@@ -89,4 +89,4 @@ MUTE colours: blinking orange = armed, red = muted, amber = you have overridden 
 
 GitHub Actions builds the mac-arm64 plugin on every push and publishes it to the `latest` release.
 
-Licence: GPL-3.0-or-later.
+Licence: MIT (see `LICENSE.txt`).
