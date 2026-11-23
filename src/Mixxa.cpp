@@ -65,7 +65,7 @@ struct Mixxa : Module {
 	Mixxa() {
 		config(PARAMS_LEN, INPUTS_LEN, OUTPUTS_LEN, LIGHTS_LEN);
 		for (int i = 0; i < CH; i++) {
-			configParam(LEVEL_PARAM + i, 0.f, 1.f, 0.7937f, string::f("Channel %d level", i + 1), " dB", -10.f, 60.f, 6.0206f);
+			configParam(LEVEL_PARAM + i, 0.f, 1.f, 0.7937f, string::f("Channel %d level", i + 1), " dB", -10.f, 60.f, 6.0206f)->randomizeEnabled = false;
 			configParam(PAN_PARAM + i, -1.f, 1.f, 0.f, string::f("Channel %d pan", i + 1), "%", 0.f, 100.f);
 			configParam(DUCK_PARAM + i, 0.f, 1.f, 0.f, i == 0 ? "Channel 1 is the kick: it never ducks" : string::f("Channel %d duck depth", i + 1), "%", 0.f, 100.f);
 			configButton(MUTE_PARAM + i, string::f("Channel %d mute (on the next beat)", i + 1));
@@ -82,7 +82,7 @@ struct Mixxa : Module {
 		configParam(RELEASE_PARAM, 0.04f, 0.4f, 0.16f, "Duck release", " ms", 0.f, 1000.f);
 		configParam(SHAPE_PARAM, 0.f, 1.f, 0.5f, "Duck shape (gate, pump, swell)");
 		configParam(GLUE_PARAM, 0.f, 1.f, 0.f, "GLUE: 2:1 bus compressor with make-up gain", "%", 0.f, 100.f);
-		configParam(MASTER_PARAM, 0.f, 1.f, 0.7937f, "Master level", " dB", -10.f, 60.f, 6.0206f);
+		configParam(MASTER_PARAM, 0.f, 1.f, 0.7937f, "Master level", " dB", -10.f, 60.f, 6.0206f)->randomizeEnabled = false;
 		configInput(TRIG_INPUT, "Random trigger: roll on the next beat");
 		configInput(COUNT_INPUT, "COUNT CV: -5 to +5 V adds 0 to 8 (as Tiny Tricks' Random Mute x8)");
 		configInput(SCENE_INPUT, "Scene CV: 0 to 4 V picks A to D (1 V each)");
